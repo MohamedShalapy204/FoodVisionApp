@@ -18,7 +18,7 @@ effnet.load_state_dict(torch.load(f='02_pretrained_effnet_model.pth',
 def predict(img) -> Tuple[Dict, float]:
   start_time = timer()
 
-  img = auto_transforms(img).unsqueeze(0)
+  img = effnet_transforms(img).unsqueeze(0)
 
   effnet.eval()
   with torch.inference_mode():
