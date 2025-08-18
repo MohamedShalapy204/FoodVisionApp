@@ -34,6 +34,8 @@ title = 'FoodVision app 🍕🥩🍣'
 description = 'An EfficientNet Computer Vision Model to Classify Images of Food as Pizza, Steak or Sushi.'
 article = 'Created at Pytorch Course'
 
+examples_list = [['examples/' + example] for example in os.listdir('examples')]
+
 demo = gr.Interface(fn=predict,
                     inputs=gr.Image(type='pil'),
                     outputs=[gr.Label(num_top_classes=3, label='Predictions'),
